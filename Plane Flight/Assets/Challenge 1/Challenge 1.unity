@@ -156,7 +156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  rotationSpeed: 10
+  rotationSpeed: 10.24
   verticalInput: 10
 --- !u!1 &170076733
 GameObject:
@@ -1763,6 +1763,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1313498725}
     m_Modifications:
+    - target: {fileID: 1107007965358788362, guid: 51a084e4035b24e76997744a50c711d4,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.41
+      objectReference: {fileID: 0}
+    - target: {fileID: 1107007965358788362, guid: 51a084e4035b24e76997744a50c711d4,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -19.3
+      objectReference: {fileID: 0}
     - target: {fileID: 3858995680371424911, guid: 51a084e4035b24e76997744a50c711d4,
         type: 3}
       propertyPath: m_Name
