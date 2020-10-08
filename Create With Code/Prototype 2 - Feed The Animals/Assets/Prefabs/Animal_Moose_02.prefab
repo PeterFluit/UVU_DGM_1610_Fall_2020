@@ -94,6 +94,9 @@ GameObject:
   - component: {fileID: 6537324082656549923}
   - component: {fileID: 6537324082664206201}
   - component: {fileID: 6537324081392778614}
+  - component: {fileID: 2028929867}
+  - component: {fileID: 2028929868}
+  - component: {fileID: 7301346251655581733}
   m_Layer: 0
   m_Name: Animal_Moose_02
   m_TagString: Untagged
@@ -108,7 +111,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6537324082656790519}
-  m_LocalRotation: {x: -0.001450461, y: 0.99999434, z: -0.000039564668, w: -0.0030443063}
+  m_LocalRotation: {x: -0.0014487185, y: 0.99999434, z: -0.000039218154, w: -0.0030455466}
   m_LocalPosition: {x: 0.81, y: 0.1, z: 4.67}
   m_LocalScale: {x: 11, y: 11, z: 11}
   m_Children:
@@ -156,7 +159,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 522003b7503c6a543a8b06ea285f3b7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 40
+  speed: 6
+--- !u!114 &2028929867
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6537324082656790519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9727f67360ebd284abc55b6f50515e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!65 &2028929868
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6537324082656790519}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.37103686, y: 0.55723715, z: 0.5317761}
+  m_Center: {x: 0.026083747, y: 0.22138502, z: 0.036578305}
+--- !u!114 &7301346251655581733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6537324082656790519}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4446507fc269e854a9a13dcb3ee7fff9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6537324082656806489
 GameObject:
   m_ObjectHideFlags: 0
