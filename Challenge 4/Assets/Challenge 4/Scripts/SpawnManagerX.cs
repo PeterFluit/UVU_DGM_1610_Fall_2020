@@ -12,10 +12,16 @@ public class SpawnManagerX : MonoBehaviour
     private float spawnZMax = 25; // set max spawn Z
 
     public int enemyCount;
-    public int waveCount = 1;
+    public int waveNumber = 1;
 
 
     public GameObject player; 
+    
+    //Start is called before the first frame update
+    void Start()
+    {
+        SpawnEnemyWave(waveNumber);
+    }
 
     // Update is called once per frame
     void Update()
@@ -24,8 +30,8 @@ public class SpawnManagerX : MonoBehaviour
 
         if (enemyCount == 0)
         {
-            waveCount++;
-            SpawnEnemyWave(waveCount);
+            waveNumber++;
+            SpawnEnemyWave(waveNumber);
         }
 
     }

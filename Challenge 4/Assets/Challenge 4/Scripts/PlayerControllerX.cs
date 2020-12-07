@@ -37,9 +37,9 @@ public class PlayerControllerX : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Powerup"))
         {
-            Destroy(other.gameObject);
             hasPowerup = true;
-            powerupIndicator.SetActive(true);
+            Destroy(other.gameObject);
+            StartCoroutine(PowerupCooldown());
         }
     }
 
@@ -48,7 +48,6 @@ public class PlayerControllerX : MonoBehaviour
     {
         yield return new WaitForSeconds(powerUpDuration);
         hasPowerup = false;
-        powerupIndicator.SetActive(false);
     }
 
     // If Player collides with enemy
