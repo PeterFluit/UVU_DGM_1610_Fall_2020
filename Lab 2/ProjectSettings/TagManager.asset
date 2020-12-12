@@ -3,7 +3,12 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
+  - Power Up
+  - Powerup
+  - Flower
+  - Tiger
   layers:
   - Default
   - TransparentFX

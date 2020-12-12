@@ -45,4 +45,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Tiger"))
+        {
+            Debug.Log("Player has collided with tiger.");
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.CompareTag("Flower"))
+        {
+            Destroy(other.gameObject);
+        }
+    }
 }
