@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public float speed = 1.0f;
+    public float speed = 6.0f;
     private Rigidbody enemyRb;
     private GameObject player;
+    public float turnSpeed;
     // Start is called before the first frame update
     void Start()
     {

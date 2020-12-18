@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -7,11 +7,15 @@ public class PlayerController : MonoBehaviour
     public float speed = 10.0f;
     private float zBound = 25;
     private Rigidbody playerRb;
+    public bool gameOver;
+    public float turnSpeed;
+    private GameObject focalPoint;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
+        focalPoint = GameObject.Find("Focal Point");
     }
 
     // Update is called once per frame
@@ -24,11 +28,9 @@ public class PlayerController : MonoBehaviour
     //Lets player move in any direction based on arrow key input
     void MovePlayer()
     {
-        float horizontalInput = Input.GetAxis("Horizontal");
-        float verticalInput = Input.GetAxis("Vertical");
+        float forwardInput = Input.GetAxis("Vertical");
 
-        playerRb.AddForce(Vector3.forward * speed * verticalInput);
-        playerRb.AddForce(Vector3.right * speed * horizontalInput);
+        playerRb.AddForce(focalPoint.transform.forward * forwardInput * speed);
     }
 
     //Boundaries on z axis which prevent player from leaving the top or bottom of the screen
@@ -49,7 +51,8 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Tiger"))
         {
-            Debug.Log("Player has collided with tiger.");
+            Debug.Log("Game Over");
+            gameOver = true;
         }
     }
 

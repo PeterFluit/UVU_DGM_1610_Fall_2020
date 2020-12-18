@@ -7,14 +7,16 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] enemies;
     public GameObject powerup;
 
-    private float zEnemySpawn = 12.0f;
+    private float zEnemySpawn = 10.0f;
     private float xSpawnRange = 16.0f;
     private float zPowerupRange = 5.0f;
     private float ySpawn = 0.75f;
 
-    private float powerupSpawnTime = 12.0f;
-    private float enemySpawnTime = 1.0f;
+    private float powerupSpawnTime = 5.0f;
+    private float enemySpawnTime = 10.0f;
     private float startDelay = 1.0f;
+
+    public bool hasPowerup = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,6 +31,7 @@ public class SpawnManager : MonoBehaviour
         
     }
 
+    //Spawn Enemies
     void SpawnRandomEnemy()
     {
         float randomX = Random.Range(-xSpawnRange, xSpawnRange);
@@ -39,6 +42,7 @@ public class SpawnManager : MonoBehaviour
         Instantiate(enemies[randomIndex], spawnPos, enemies[randomIndex].gameObject.transform.rotation);
     }
 
+    //Spawn Powerups
     void SpawnPowerup()
     {
         float randomX = Random.Range(-xSpawnRange, xSpawnRange);
@@ -47,5 +51,14 @@ public class SpawnManager : MonoBehaviour
         Vector3 spawnPos = new Vector3(randomX, ySpawn, randomZ);
 
         Instantiate(powerup, spawnPos, powerup.gameObject.transform.rotation);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.CompareTag("Powerup"))
+        {
+            hasPowerup = true;
+            Destroy(other.gameObject);
+        }
     }
 }
