@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float speed = 10.0f;
+    private GameManager gameManager;
     private float zBound = 25;
     private Rigidbody playerRb;
     public bool gameOver;
@@ -16,6 +17,8 @@ public class PlayerController : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody>();
         focalPoint = GameObject.Find("Focal Point");
+
+        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -51,8 +54,15 @@ public class PlayerController : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Tiger"))
         {
-            Debug.Log("Game Over");
-            gameOver = true;
+            if(gameManager.isGameActive)
+            {
+               Debug.Log("Game Over");
+               gameOver = true;
+
+            gameManager.GameOver();
+            }
+
+            
         }
     }
 
@@ -61,6 +71,7 @@ public class PlayerController : MonoBehaviour
         if(other.gameObject.CompareTag("Flower"))
         {
             Destroy(other.gameObject);
+            gameManager.UpdateScore(5);
         }
     }
 }
